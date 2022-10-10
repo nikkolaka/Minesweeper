@@ -17,12 +17,12 @@ public class MineReader {
 
 
 
-    public MineReader() throws IOException {
+    MineReader() throws IOException {
         readFile();
         convertMines();
         writeFile();
     }
-    //from file
+
 
     private void readFile() throws IOException {
         mineInputStr = Files.readString(Paths.get(inputFileName));
@@ -33,6 +33,9 @@ public class MineReader {
             if(scanner.hasNextInt()){
                 firstNum = scanner.nextInt();
                 secondNum = scanner.nextInt();
+                if(firstNum == 0 && secondNum == 0){
+                    break;
+                }
             }
             scanner.nextLine();
             char[][] mineField = new char[firstNum+2][secondNum+2];

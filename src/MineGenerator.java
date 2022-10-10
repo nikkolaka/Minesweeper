@@ -12,7 +12,7 @@ public class MineGenerator {
     private List<char[][]> mineList = new ArrayList<>();
     private String mineField = "";
 
-    public MineGenerator() throws IOException {
+    MineGenerator() throws IOException {
 
         buildMines();
         buildMineString();
@@ -23,17 +23,17 @@ public class MineGenerator {
     
     private void buildMines(){
 
-        buildMineArray(0,0,((double)0)/((double)100));
+        buildMineArray(0,0,0.0);
         buildMineArray(1,1, 1.0);
         buildMineArray(100,100, 0.05);
         for (int i = 0; i <= 100; i+= 20) {
-            buildMineArray(i,i,((double)0)/((double)100));
+            buildMineArray(i,i,0);
         }
         for (int i = 0; i <= 100; i+= 20) {
-            buildMineArray(i,i,((double)25)/((double)100));
+            buildMineArray(i,i,0.25);
         }
         for (int i = 0; i <= 100; i+= 20) {
-            buildMineArray(i,i,((double)50)/((double)100));
+            buildMineArray(i,i,0.5);
         }
         for (int i = 0; i <= 100; i+= 20) {
             buildMineArray(i,i, 1.0);

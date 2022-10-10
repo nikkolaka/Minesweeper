@@ -23,8 +23,9 @@ public class MineGenerator {
     
     private void buildMines(){
 
-        buildMineArray(1,1,((double)0)/((double)100));
+        buildMineArray(0,0,((double)0)/((double)100));
         buildMineArray(1,1, 1.0);
+        buildMineArray(100,100, 0.05);
         for (int i = 0; i <= 100; i+= 20) {
             buildMineArray(i,i,((double)0)/((double)100));
         }
